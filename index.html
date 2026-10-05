@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aishwarya L Pujeri | AI Engineer</title>
+<meta name="description" content="Portfolio of Aishwarya L Pujeri, an AI Engineer building practical machine learning and applied AI systems.">
+<meta name="theme-color" content="#0f172a">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Aishwarya L Pujeri | AI Engineer">
+<meta property="og:description" content="AI Engineer building practical machine learning and applied AI systems.">
+<meta property="og:type" content="website">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Aishwarya L Pujeri | AI Engineer">
+<meta name="twitter:description" content="AI Engineer building practical machine learning and applied AI systems.">
+
+<link rel="canonical" href="">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2714%27 fill=%27%23123b63%27/%3E%3Ctext x=%2732%27 y=%2742%27 font-size=%2726%27 font-family=%27sans-serif%27 font-weight=%27700%27 text-anchor=%27middle%27 fill=%27white%27%3EAP%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+
+<script>
+  // Apply saved (or system) theme before paint to avoid a flash of the wrong theme
+  (function(){
+    try{
+      var saved = localStorage.getItem('portfolio-theme');
+      var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      if (theme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+    }catch(e){}
+  })();
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<div id="scroll-progress" role="progressbar" aria-label="Page scroll progress"></div>
+<canvas id="synapse-canvas" aria-hidden="true"></canvas>
+<div class="hex-grid" aria-hidden="true"></div>
+
+<div id="cursor" aria-hidden="true"></div>
+<div id="cursor-ring" aria-hidden="true"></div>
+
+<div id="toast-container" aria-live="polite"></div>
+
+<!-- ============ NAVIGATION ============ -->
+<nav id="nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a class="logo" href="#home"><span class="logo-mark">AP</span> <span id="navName">aishwarya</span><span class="logo-dot">.ai</span></a>
+    <div class="nav-center" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-right">
+      <span class="nav-badge" id="availabilityBadge" hidden><span class="pulse-dot"></span> <span id="availabilityText"></span></span>
+      <div class="nav-controls">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme" type="button">
+          <i class="fas fa-moon icon-moon" aria-hidden="true"></i>
+          <i class="fas fa-sun icon-sun" aria-hidden="true"></i>
+        </button>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu" type="button">
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" class="mobile-link">About</a>
+  <a href="#skills" class="mobile-link">Skills</a>
+  <a href="#projects" class="mobile-link">Projects</a>
+  <a href="#certifications" class="mobile-link">Certifications</a>
+  <a href="#contact" class="mobile-link">Contact</a>
+</div>
+
+<main id="main-content">
+
+<!-- ============ HERO ============ -->
+<section id="home" aria-label="Introduction">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="grid-lines"></div>
+    <div class="glow-spot g1"></div>
+    <div class="glow-spot g2"></div>
+    <div class="glow-spot g3"></div>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-tag reveal">
+        <i class="fas fa-microchip" aria-hidden="true"></i>
+        <span>Machine Learning</span> · Deep Learning · Applied AI Systems
+      </div>
+      <h1 class="hero-title reveal">
+        <span class="name" id="heroName">Aishwarya L Pujeri</span>
+        <span class="role"><span class="role-fill" id="typewriter">AI Engineer</span><span class="cursor-blink" aria-hidden="true">|</span></span>
+      </h1>
+      <p class="hero-desc reveal" id="heroTagline">
+        I build practical <em>machine learning</em> and <em>applied AI systems</em> — turning data,
+        models, and experimentation into software people can actually use.
+      </p>
+      <div class="hero-actions reveal">
+        <a href="#projects" class="btn-main">View Projects <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        <a href="#contact" class="btn-ghost">Contact Me</a>
+        <a href="#" id="resumeBtn" class="btn-ghost" target="_blank" rel="noopener" hidden>Resume <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+      </div>
+      <div class="hero-social reveal" id="heroSocial"></div>
+      <div class="hero-chips reveal">
+        <span class="chip"><i class="fab fa-python" aria-hidden="true"></i> Python</span>
+        <span class="chip"><i class="fas fa-brain" aria-hidden="true"></i> Machine Learning</span>
+        <span class="chip"><i class="fas fa-layer-group" aria-hidden="true"></i> Deep Learning</span>
+        <span class="chip"><i class="fas fa-flask" aria-hidden="true"></i> Applied AI</span>
+      </div>
+
+      <div class="hero-meta reveal" id="heroStats"></div>
+    </div>
+
+    <div class="hero-right">
+      <div class="profile-scene reveal" id="profileScene">
+        <div class="orbit-pulse" aria-hidden="true"></div>
+        <div class="orbit-ring-outer" aria-hidden="true"></div>
+        <div class="orbit-ring-mid" aria-hidden="true"></div>
+        <div class="profile-photo" id="profilePhoto"></div>
+        <span class="float-label fl-1">ML</span>
+        <span class="float-label fl-2">Python</span>
+        <span class="float-label fl-3">AI</span>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue"><span></span>Scroll</div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Python</span><span>·</span><span>PyTorch</span><span>·</span><span>TensorFlow</span><span>·</span><span>Scikit-learn</span><span>·</span><span>OpenCV</span><span>·</span><span>YOLO</span><span>·</span><span>NLTK</span><span>·</span><span>LangChain</span><span>·</span><span>Streamlit</span><span>·</span><span>FastAPI</span><span>·</span><span>Python</span><span>·</span><span>PyTorch</span><span>·</span><span>TensorFlow</span><span>·</span><span>Scikit-learn</span><span>·</span><span>OpenCV</span><span>·</span><span>YOLO</span><span>·</span><span>NLTK</span><span>·</span><span>LangChain</span><span>·</span><span>Streamlit</span><span>·</span><span>FastAPI</span><span>·</span>
+  </div>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" class="section" aria-label="About">
+  <div class="container">
+    <div class="section-label reveal"><div class="label-line"></div><span class="label-text">About</span></div>
+    <h2 class="section-title reveal">Where research meets <span class="accent">real software</span></h2>
+
+    <div class="about-layout">
+      <div class="about-copy reveal">
+        <p>
+          I'm an aspiring AI Engineer with hands-on experience building intelligent applications across
+          machine learning, deep learning, NLP, and computer vision. I work mainly in Python with
+          Scikit-learn, TensorFlow, PyTorch, YOLO, OpenCV, and NLTK, and I enjoy the full path from data
+          preprocessing and feature engineering to model evaluation and a deployed app.
+        </p>
+        <p>
+          My projects range from a RAG-based nutrition assistant running a local LLM and real-time
+          face recognition and driver monitoring systems, to a machine learning framework I wrote from
+          scratch and published on PyPI. I'm currently pursuing an M.Tech in Artificial Intelligence at REVA University.
+        </p>
+
+        <h3 class="tl-title">Education</h3>
+        <div class="tl" id="eduTimeline"></div>
+        <h3 class="tl-title">Experience</h3>
+        <div class="tl" id="expTimeline"></div>
+      </div>
+
+      <div class="about-cards" id="aboutCards"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section id="skills" class="section alt" aria-label="Skills">
+  <div class="container">
+    <div class="section-header-row reveal">
+      <div>
+        <div class="section-label"><div class="label-line"></div><span class="label-text">Skills</span></div>
+        <h2 class="section-title">The <span class="accent">stack</span> behind the work</h2>
+        <p class="section-intro">The languages, libraries, and tools I use across ML, deep learning, NLP, and vision projects.</p>
+      </div>
+    </div>
+    <div class="skills-grid" id="skillsGrid"></div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section id="projects" class="section" aria-label="Projects">
+  <div class="container">
+    <div class="section-header-row reveal">
+      <div>
+        <div class="section-label"><div class="label-line"></div><span class="label-text">Projects</span></div>
+        <h2 class="section-title">Selected <span class="accent">work</span></h2>
+        <p class="section-intro">Ten projects across generative AI, NLP, computer vision, and machine learning. Filter by category or open a card for details.</p>
+      </div>
+    </div>
+
+    <div class="filter-bar reveal" id="filterBar" role="group" aria-label="Filter projects by category"></div>
+    <div class="proj-grid" id="projGrid"></div>
+    <div class="proj-cta" id="projGithubCta"></div>
+  </div>
+</section>
+
+<!-- ============ HOW I WORK ============ -->
+<section id="process" class="section alt" aria-label="How I approach AI projects">
+  <div class="container">
+    <div class="section-label reveal"><div class="label-line"></div><span class="label-text">Process</span></div>
+    <h2 class="section-title reveal">How I <span class="accent">approach</span> a project</h2>
+    <div class="process-timeline" id="processTimeline"></div>
+  </div>
+</section>
+
+<!-- ============ CERTIFICATIONS ============ -->
+<section id="certifications" class="section" aria-label="Certifications">
+  <div class="container">
+    <div class="section-label reveal"><div class="label-line"></div><span class="label-text">Certifications</span></div>
+    <h2 class="section-title reveal">Certifications <span class="accent">&amp; credentials</span></h2>
+    <p class="section-intro reveal">Courses and credentials I've completed.</p>
+    <div class="cert-grid" id="certGrid"></div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="section alt" aria-label="Contact">
+  <div class="container">
+    <div class="section-label reveal"><div class="label-line"></div><span class="label-text">Contact</span></div>
+    <h2 class="section-title reveal">Let's <span class="accent">build</span> something intelligent</h2>
+    <div class="contact-layout">
+      <div class="contact-left reveal">
+        <h3>Open to AI/ML opportunities &amp; collaborations.</h3>
+        <p>Whether it's a role, a research collaboration, or an interesting AI problem worth solving —
+          I'd love to hear about it.</p>
+        <div class="contact-cards" id="contactCards"></div>
+      </div>
+      <form class="contact-form reveal" id="contactForm" novalidate>
+        <div class="field">
+          <input type="text" id="cf-name" placeholder=" " required autocomplete="name">
+          <label for="cf-name">Name</label>
+        </div>
+        <div class="field">
+          <input type="email" id="cf-email" placeholder=" " required autocomplete="email">
+          <label for="cf-email">Email</label>
+        </div>
+        <div class="field">
+          <input type="text" id="cf-subject" placeholder=" " autocomplete="off">
+          <label for="cf-subject">Subject</label>
+        </div>
+        <div class="field">
+          <textarea id="cf-message" rows="5" placeholder=" " required></textarea>
+          <label for="cf-message">Message</label>
+        </div>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        <button type="submit" class="btn-send">Send Message <i class="fas fa-paper-plane" aria-hidden="true"></i></button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left" id="footerLogo">aishwarya<span>.ai</span> — AI Engineer</div>
+    <span class="footer-copy" id="footerCopy">© 2026 Aishwarya L Pujeri. All rights reserved.</span>
+    <div class="footer-links" id="footerLinks"></div>
+  </div>
+</footer>
+
+<a href="#home" class="back-top" id="backTop" aria-label="Back to top"><i class="fas fa-arrow-up" aria-hidden="true"></i></a>
+
+<!-- ============ PROJECT MODAL (view details) ============ -->
+<div class="modal-overlay" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose" aria-label="Close project details" type="button"><i class="fas fa-xmark" aria-hidden="true"></i></button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<script src="main.js"></script>
+
+</body>
+</html>
